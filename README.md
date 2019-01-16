@@ -52,12 +52,47 @@ vagrant up
 vagrant ssh
 ```
 
-This will provision a VM running Ubuntu 17.10. It will install PHP 7.1 and composer. Finally it will run composer. 
+This will provision a VM running Ubuntu 18.04. It will install PHP 7.2 and composer. Finally it will run composer. 
 
 Once logged into the VM run PHPUnit:
 
 ```
 cd /vagrant/sample-unit-test-project
+./vendor/bin/phpunit
+```
+
+
+You should see an output along the lines of:
+
+```
+PHPUnit 7.0.1 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 193 ms, Memory: 4.00MB
+
+OK (1 test, 1 assertion)
+```
+
+The important bit is the `OK (1 test, 1 assertion)`. If you see that then you've installed everything correctly to run PHPUnit!
+
+
+## Using Docker
+
+You need to install [docker](https://www.docker.com/get-started) on your machine. 
+
+The from this directory start up the container and create a shell session:
+
+```
+docker-compose up -d
+docker-compose exec php bash
+```
+
+This will create a container which PHP 7.2 and composer installed. Finally it will run composer and download the dependencies. 
+
+Once logged into the VM run PHPUnit:
+
+```
 ./vendor/bin/phpunit
 ```
 
