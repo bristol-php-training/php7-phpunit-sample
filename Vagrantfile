@@ -1,6 +1,6 @@
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "ubuntu/artful64"
+  config.vm.box = "ubuntu/bionic64"
   config.ssh.forward_agent = true
 
 
@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
   # Provision box with php and composer
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get install -y git php7.1-cli php7.1-mbstring php7.1-xml php7.1-zip vim zip
+    sudo apt-get install -y git vim zip php7.2
     curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
     sudo -iu vagrant /usr/local/bin/composer --working-dir=/vagrant/sample-unit-test-project install
   SHELL
