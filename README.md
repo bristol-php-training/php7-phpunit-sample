@@ -9,7 +9,7 @@ You can either install the software you require and run throught the commands on
 
 You need to install the following:
 
-- PHP 7.0 or higher
+- PHP 7.2 or higher
 - Composer [Install instructions](https://getcomposer.org/doc/00-intro.md)
 
 Once installed use composer to download the required dependencies:
@@ -52,7 +52,7 @@ vagrant up
 vagrant ssh
 ```
 
-This will provision a VM running Ubuntu 17.10. It will install PHP 7.1 and composer. Finally it will run composer. 
+This will provision a VM running Ubuntu 18.04. It will install PHP 7.2 and composer. Finally it will run composer. 
 
 Once logged into the VM run PHPUnit:
 
